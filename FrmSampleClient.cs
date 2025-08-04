@@ -812,7 +812,7 @@ namespace EpServerEngineSampleClient
 					//AddMsg("pump off");
 				}
             }
-            if (tick == 5)
+            if (tick == 2)
             {
                 if (m_client.IsConnectionAlive)
                 {
@@ -829,8 +829,8 @@ namespace EpServerEngineSampleClient
 			{
                 if (m_client.IsConnectionAlive)
                 {
-					svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("SEND_CLIENT_LIST"), 5, "send client list\0");
-					AddMsg("send msg 2");
+//					svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("SEND_CLIENT_LIST"), 5, "send client list\0");
+//					AddMsg("send msg 2");
 				}
 			}
             if (tick == 20)

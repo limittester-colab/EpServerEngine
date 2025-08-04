@@ -208,7 +208,7 @@ namespace EpServerEngineSampleClient
 			int offset = svrcmd.GetCmdIndexI(cmd);
 			//AddMsg("offset: " + offset.ToString());
 			//AddMsg(svrcmd.GetState(offset).ToString());
-			ret = svrcmd.Change_PortCmd(offset, 2);			// this is bad
+			ret = svrcmd.Change_PortCmd(offset, 3);			// this is bad
 			//AddMsg(ret.ToString());
 			return ret;
 		}
@@ -219,7 +219,7 @@ namespace EpServerEngineSampleClient
 			int offset = svrcmd.GetCmdIndexI(cmd);
 			//AddMsg("offset: " + offset.ToString());
 			//AddMsg(svrcmd.GetState(offset).ToString());
-			return svrcmd.Change_PortCmd(offset, 2);
+			return svrcmd.Change_PortCmd(offset, 3);
 		}
 		private void btn24v1_Click(object sender, EventArgs e)
 		{

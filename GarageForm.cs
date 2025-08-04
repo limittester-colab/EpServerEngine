@@ -233,19 +233,19 @@ namespace EpServerEngineSampleClient
 		{
 			string cmd = on_label_list[which];
 			int offset = svrcmd.GetCmdIndexI(cmd);
-			return svrcmd.Change_PortCmd(offset, 5,str);
+			return svrcmd.Change_PortCmd(offset, 3,str);
 		}
 		private bool SendCmd(int which)
 		{
 			string cmd = on_label_list[which];
 			int offset = svrcmd.GetCmdIndexI(cmd);
-			return svrcmd.Change_PortCmd(offset, 5);
+			return svrcmd.Change_PortCmd(offset, 3);
 		}
 		private bool SendCmd(int which, bool onoff)
 		{
 			string cmd = on_label_list[which];
 			int offset = svrcmd.GetCmdIndexI(cmd);
-			return svrcmd.Change_PortCmd(offset, 5, onoff);		// this is bad
+			return svrcmd.Change_PortCmd(offset, 3, onoff);		// this is bad
 		}
 		public void ToggleButton(int which, bool state)
 		{
@@ -282,10 +282,10 @@ namespace EpServerEngineSampleClient
 			//AddMsg("on: " + single_select.ToString() + " off: " + prev.ToString());
 			string cmd = on_label_list[single_select];
 			int offset = svrcmd.GetCmdIndexI(cmd);
-			svrcmd.Send_ClCmd(offset, 5, true);
+			svrcmd.Send_ClCmd(offset, 2, true);
 			cmd = on_label_list[prev];
 			offset = svrcmd.GetCmdIndexI(cmd);
-			svrcmd.Send_ClCmd(offset, 5, false);
+			svrcmd.Send_ClCmd(offset, 2, false);
 			if (++single_select > 7)
 				single_select = 0;
 		}
