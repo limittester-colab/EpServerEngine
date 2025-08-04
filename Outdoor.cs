@@ -104,13 +104,13 @@ namespace EpServerEngineSampleClient
 			int offset = svrcmd.GetCmdIndexI(cmd);
 			//AddMsg("offset: " + offset.ToString());
 			//AddMsg(svrcmd.GetState(offset).ToString());
-			return svrcmd.Change_PortCmd(offset, 0);
+			return svrcmd.Change_PortCmd(offset, 4);
 		}
 		private bool SendCmd(int which, bool onoff)
 		{
 			string cmd = on_label_list[which];
 			int offset = svrcmd.GetCmdIndexI(cmd);
-			return svrcmd.Change_PortCmd(offset, 0, onoff);
+			return svrcmd.Change_PortCmd(offset, 4, onoff);
 		}
 
 		private void btnCoopLight1_Click(object sender, EventArgs e)
