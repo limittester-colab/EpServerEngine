@@ -52,11 +52,6 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.btnAll = new System.Windows.Forms.Button();
-			this.btnWaterPump = new System.Windows.Forms.Button();
-			this.btnWaterHeater = new System.Windows.Forms.Button();
-			this.btnWaterValve1 = new System.Windows.Forms.Button();
-			this.btnWaterValve2 = new System.Windows.Forms.Button();
-			this.btnWaterValve3 = new System.Windows.Forms.Button();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
@@ -304,111 +299,6 @@
 			this.btnAll.UseVisualStyleBackColor = true;
 			this.btnAll.Click += new System.EventHandler(this.btnAll_Click_1);
 			// 
-			// btnWaterPump
-			// 
-			this.btnWaterPump.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnWaterPump.Location = new System.Drawing.Point(451, 12);
-			this.btnWaterPump.Name = "btnWaterPump";
-			this.btnWaterPump.Size = new System.Drawing.Size(118, 39);
-			this.btnWaterPump.TabIndex = 8;
-			this.btnWaterPump.Text = "OFF";
-			this.btnWaterPump.UseVisualStyleBackColor = true;
-			this.btnWaterPump.Click += new System.EventHandler(this.btnWaterPump_Click);
-			// 
-			// btnWaterHeater
-			// 
-			this.btnWaterHeater.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnWaterHeater.Location = new System.Drawing.Point(451, 220);
-			this.btnWaterHeater.Name = "btnWaterHeater";
-			this.btnWaterHeater.Size = new System.Drawing.Size(118, 39);
-			this.btnWaterHeater.TabIndex = 12;
-			this.btnWaterHeater.Text = "OFF";
-			this.btnWaterHeater.UseVisualStyleBackColor = true;
-			this.btnWaterHeater.Click += new System.EventHandler(this.btnWaterHeater_Click);
-			// 
-			// btnWaterValve1
-			// 
-			this.btnWaterValve1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnWaterValve1.Location = new System.Drawing.Point(451, 61);
-			this.btnWaterValve1.Name = "btnWaterValve1";
-			this.btnWaterValve1.Size = new System.Drawing.Size(118, 39);
-			this.btnWaterValve1.TabIndex = 9;
-			this.btnWaterValve1.Text = "OFF";
-			this.btnWaterValve1.UseVisualStyleBackColor = true;
-			this.btnWaterValve1.Click += new System.EventHandler(this.btnWaterValve1_Click);
-			// 
-			// btnWaterValve2
-			// 
-			this.btnWaterValve2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnWaterValve2.Location = new System.Drawing.Point(451, 114);
-			this.btnWaterValve2.Name = "btnWaterValve2";
-			this.btnWaterValve2.Size = new System.Drawing.Size(118, 39);
-			this.btnWaterValve2.TabIndex = 10;
-			this.btnWaterValve2.Text = "OFF";
-			this.btnWaterValve2.UseVisualStyleBackColor = true;
-			this.btnWaterValve2.Click += new System.EventHandler(this.btnWaterValve2_Click);
-			// 
-			// btnWaterValve3
-			// 
-			this.btnWaterValve3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnWaterValve3.Location = new System.Drawing.Point(451, 167);
-			this.btnWaterValve3.Name = "btnWaterValve3";
-			this.btnWaterValve3.Size = new System.Drawing.Size(118, 39);
-			this.btnWaterValve3.TabIndex = 11;
-			this.btnWaterValve3.Text = "OFF";
-			this.btnWaterValve3.UseVisualStyleBackColor = true;
-			this.btnWaterValve3.Click += new System.EventHandler(this.btnWaterValve3_Click);
-			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.Location = new System.Drawing.Point(299, 227);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(132, 24);
-			this.label10.TabIndex = 26;
-			this.label10.Text = "Water Heater";
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.Location = new System.Drawing.Point(299, 19);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(124, 24);
-			this.label11.TabIndex = 27;
-			this.label11.Text = "Water Pump";
-			// 
-			// label12
-			// 
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.Location = new System.Drawing.Point(331, 70);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(79, 24);
-			this.label12.TabIndex = 28;
-			this.label12.Text = "Valve 1";
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label13.Location = new System.Drawing.Point(331, 174);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(79, 24);
-			this.label13.TabIndex = 29;
-			this.label13.Text = "Valve 3";
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(331, 123);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(79, 24);
-			this.label14.TabIndex = 30;
-			this.label14.Text = "Valve 2";
-			// 
 			// tbTimer
 			// 
 			this.tbTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -435,10 +325,10 @@
 			this.Controls.Add(this.label12);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.label10);
-			this.Controls.Add(this.btnWaterValve3);
-			this.Controls.Add(this.btnWaterValve2);
-			this.Controls.Add(this.btnWaterValve1);
 			this.Controls.Add(this.btnWaterHeater);
+			this.Controls.Add(this.btnWaterValve1);
+			this.Controls.Add(this.btnWaterValve2);
+			this.Controls.Add(this.btnWaterValve3);
 			this.Controls.Add(this.btnWaterPump);
 			this.Controls.Add(this.btnAll);
 			this.Controls.Add(this.label9);

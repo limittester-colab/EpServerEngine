@@ -58,11 +58,11 @@ namespace EpServerEngineSampleClient
 			on_label_list.Add("WEST_LIGHT");
 			on_label_list.Add("NORTHEAST_LIGHT");
 			on_label_list.Add("SOUTHWEST_LIGHT");
-			on_label_list.Add("WATER_PUMP");
+			on_label_list.Add("WATER_HEATER");
 			on_label_list.Add("WATER_VALVE1");
 			on_label_list.Add("WATER_VALVE2");
 			on_label_list.Add("WATER_VALVE3");
-			on_label_list.Add("WATER_HEATER");
+			on_label_list.Add("WATER_PUMP");
 
 			button_list = new List<ButtonList>();
 			Control sCtl = this.btnDesk;
@@ -78,7 +78,7 @@ namespace EpServerEngineSampleClient
 						Enabled = sCtl.Enabled,
 						Name = sCtl.Name
 					});
-					//AddMsg(button_list[i].Name);
+					AddMsg(button_list[i].Name + " " + button_list[i].TabOrder.ToString());
 					sCtl = GetNextControl(sCtl, true);
 				}
 			}
@@ -368,33 +368,30 @@ namespace EpServerEngineSampleClient
 		}
 		private void btnWaterHeater_Click(object sender, EventArgs e)
 		{
-			ToggleButton(12, SendCmd(8));
+			ToggleButton(8);
+			AddMsg("water heater");
 		}
 		private void btnWaterValve1_Click(object sender, EventArgs e)
 		{
 			ToggleButton(9);
+			AddMsg("valve 1");
 		}
 		private void btnWaterValve2_Click(object sender, EventArgs e)
 		{
 			ToggleButton(10);
+			AddMsg("valve 2");
 		}
 		private void btnWaterValve3_Click(object sender, EventArgs e)
 		{
 			ToggleButton(11);
+			AddMsg("valve 3");
 		}
 		private void btnWaterPump_Click(object sender, EventArgs e)
 		{
-			ToggleButton(8, SendCmd(12));
+			ToggleButton(12);
 			AddMsg("pump on");
 			timer2.Enabled = true;
 			pump_timer_tick = 10;
-		}
-		public void RunWaterPump(int seconds)
-		{
-			ToggleButton(8, SendCmd(12));
-			AddMsg("pump on");
-			timer2.Enabled = true;
-			pump_timer_tick = seconds;
 		}
 		private void btnAll_Click_1(object sender, EventArgs e)
 		{
@@ -456,9 +453,16 @@ namespace EpServerEngineSampleClient
 			AddMsg(pump_timer_tick.ToString());
 			if (pump_timer_tick-- == 0)
 			{
-				ToggleButton(8, SendCmd(12,"OFF"));
+				ToggleButton(11, SendCmd(11,"OFF"));
 				timer2.Enabled = false;
 			}
+		}
+		public void RunWaterPump(int seconds)
+		{
+			ToggleButton(11);
+			AddMsg("pump on");
+			timer2.Enabled = true;
+			pump_timer_tick = seconds;
 		}
 	}
 }

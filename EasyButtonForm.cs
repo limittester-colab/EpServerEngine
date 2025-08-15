@@ -55,8 +55,8 @@ namespace EpServerEngineSampleClient
 			garage_list.Add("WATER_VALVE2");
 			garage_list.Add("WATER_VALVE3");
 
-			testbench_list.Add("BENCH_24V_1");
-			testbench_list.Add("BENCH_24V_2");
+			testbench_list.Add("CHICK_LIGHT");
+			testbench_list.Add("CHICK_HEATER");
 			testbench_list.Add("BENCH_12V_1");
 			testbench_list.Add("BENCH_12V_2");
 			testbench_list.Add("BENCH_5V_1");
@@ -68,7 +68,7 @@ namespace EpServerEngineSampleClient
 			testbench_list.Add("BATTERY_HEATER");
 
 			cabin_list.Add("CABIN_SOUTH");
-			cabin_list.Add("CABIN2");
+			cabin_list.Add("CABIN_FILECB");
 			cabin_list.Add("CABIN3");
 			cabin_list.Add("CABIN_KITCHEN");
 			cabin_list.Add("CABIN_DOOR");
@@ -102,8 +102,8 @@ namespace EpServerEngineSampleClient
 		private void add_testbench_list()
 		{
 			lbPort.Items.Clear();
-			lbPort.Items.Add("BENCH_24V_1");
-			lbPort.Items.Add("BENCH_24V_2");
+			lbPort.Items.Add("CHICK_LIGHT");
+			lbPort.Items.Add("CHICK_HEATER");
 			lbPort.Items.Add("BENCH_12V_1");
 			lbPort.Items.Add("BENCH_12V_2");
 			lbPort.Items.Add("BENCH_5V_1");
@@ -112,6 +112,7 @@ namespace EpServerEngineSampleClient
 			lbPort.Items.Add("BENCH_3V3_2");
 			lbPort.Items.Add("BENCH_LIGHT1");
 			lbPort.Items.Add("BENCH_LIGHT2");
+			lbPort.Items.Add("BATTERY_HEATER");
 		}
 		private void add_cabin_list()
 		{
@@ -168,7 +169,7 @@ namespace EpServerEngineSampleClient
 			{
 				case 0:
 					add_garage_list();
-					type = 5;   // server
+					type = 5;   // garage 
 					break;
 
 				case 1:
@@ -182,7 +183,7 @@ namespace EpServerEngineSampleClient
 					break;
 				case 3:
 					add_outdoor_list();
-					type = 3;   // outdoor
+					type = 4;   // outdoor
 					break;
 
 				default:

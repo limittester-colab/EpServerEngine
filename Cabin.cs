@@ -37,7 +37,7 @@ namespace EpServerEngineSampleClient
 			svrcmd.SetPrimaryWinCl(primary_wincl);
 		
 			on_label_list.Add("CABIN_SOUTH");
-			on_label_list.Add("CABIN2");
+			on_label_list.Add("CABIN_FILECB");
 			on_label_list.Add("CABIN3");
 			on_label_list.Add("CABIN_KITCHEN");
 			on_label_list.Add("CABIN_DOOR");

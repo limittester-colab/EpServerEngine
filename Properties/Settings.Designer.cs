@@ -901,9 +901,9 @@ namespace EpServerEngineSampleClient.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Daniel\\dev\\Client-SQ" +
             "L.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string Client_SQL_DB2ConnectionString {
+        public string test1234 {
             get {
-                return ((string)(this["Client_SQL_DB2ConnectionString"]));
+                return ((string)(this["test1234"]));
             }
         }
         
@@ -937,6 +937,30 @@ namespace EpServerEngineSampleClient.Properties {
         public string Client_SQL2ConnectionString {
             get {
                 return ((string)(this["Client_SQL2ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CHICK_LIGHT {
+            get {
+                return ((bool)(this["CHICK_LIGHT"]));
+            }
+            set {
+                this["CHICK_LIGHT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CHICK_HEATER {
+            get {
+                return ((bool)(this["CHICK_HEATER"]));
+            }
+            set {
+                this["CHICK_HEATER"] = value;
             }
         }
     }

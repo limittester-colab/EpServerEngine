@@ -81,6 +81,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GarageForm.Designer.cs" />
+    <Compile Include="GarageForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GarageForm2.Designer.cs">
+      <DependentUpon>GarageForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Outdoor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
       <DependentUpon>FrmSampleClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GarageForm.resx" />
+    <EmbeddedResource Include="GarageForm2.resx">
+      <DependentUpon>GarageForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Outdoor.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

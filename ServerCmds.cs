@@ -23,12 +23,12 @@ namespace EpServerEngineSampleClient
 			WEST_LIGHT,
 			NORTHEAST_LIGHT,
 			SOUTHWEST_LIGHT,
-			WATER_PUMP,
+			WATER_HEATER,
 			WATER_VALVE1,
 			WATER_VALVE2,
 			WATER_VALVE3,
-			WATER_HEATER,       // last one on garage
-			CHICK_LIGHT,        // start of 147
+			WATER_PUMP,
+			CHICK_LIGHT,
 			CHICK_HEATER,
 			BENCH_12V_1,
 			BENCH_12V_2,
@@ -40,7 +40,7 @@ namespace EpServerEngineSampleClient
 			BENCH_LIGHT2,
 			BATTERY_HEATER,     // last one for 147
 			CABIN_SOUTH,             // start of 154
-			CABIN2,
+			CABIN_FILECB,
 			CABIN3,
 			CABIN_KITCHEN,
 			CABIN_DOOR,
@@ -92,7 +92,8 @@ namespace EpServerEngineSampleClient
 			TURN_ALL_LIGHTS_OFF,
 			SET_PROPERTIES,
 			SEND_MESSAGE2,
-			SET_CLIENT_NAME
+			SET_CLIENT_NAME,
+			SEND_IOT_VALUES
 		}
 		public ServerCmds()
 		{

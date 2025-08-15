@@ -93,6 +93,7 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnHeaterApply = new System.Windows.Forms.Button();
 			this.btnHeaterTimer = new System.Windows.Forms.Button();
+			this.garage2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -370,7 +371,8 @@
             this.cabinToolStripMenuItem,
             this.garageToolStripMenuItem,
             this.testbenchToolStripMenuItem,
-            this.outdoorToolStripMenuItem});
+            this.outdoorToolStripMenuItem,
+            this.garage2ToolStripMenuItem});
 			this.clientControlsToolStripMenuItem.Name = "clientControlsToolStripMenuItem";
 			this.clientControlsToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
 			this.clientControlsToolStripMenuItem.Text = "Client Controls";
@@ -378,28 +380,28 @@
 			// cabinToolStripMenuItem
 			// 
 			this.cabinToolStripMenuItem.Name = "cabinToolStripMenuItem";
-			this.cabinToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.cabinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.cabinToolStripMenuItem.Text = "Cabin";
 			this.cabinToolStripMenuItem.Click += new System.EventHandler(this.cabinToolStripMenuItem_Click);
 			// 
 			// garageToolStripMenuItem
 			// 
 			this.garageToolStripMenuItem.Name = "garageToolStripMenuItem";
-			this.garageToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.garageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.garageToolStripMenuItem.Text = "Garage";
 			this.garageToolStripMenuItem.Click += new System.EventHandler(this.garageToolStripMenuItem_Click);
 			// 
 			// testbenchToolStripMenuItem
 			// 
 			this.testbenchToolStripMenuItem.Name = "testbenchToolStripMenuItem";
-			this.testbenchToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.testbenchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.testbenchToolStripMenuItem.Text = "Testbench";
 			this.testbenchToolStripMenuItem.Click += new System.EventHandler(this.testbenchToolStripMenuItem_Click);
 			// 
 			// outdoorToolStripMenuItem
 			// 
 			this.outdoorToolStripMenuItem.Name = "outdoorToolStripMenuItem";
-			this.outdoorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.outdoorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.outdoorToolStripMenuItem.Text = "Outdoor";
 			this.outdoorToolStripMenuItem.Click += new System.EventHandler(this.outdoorToolStripMenuItem_Click);
 			// 
@@ -702,6 +704,13 @@
 			this.btnHeaterTimer.UseVisualStyleBackColor = true;
 			this.btnHeaterTimer.Click += new System.EventHandler(this.btnHeaterTimer_Click);
 			// 
+			// garage2ToolStripMenuItem
+			// 
+			this.garage2ToolStripMenuItem.Name = "garage2ToolStripMenuItem";
+			this.garage2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.garage2ToolStripMenuItem.Text = "Garage 2";
+			this.garage2ToolStripMenuItem.Click += new System.EventHandler(this.garage2ToolStripMenuItem_Click);
+			// 
 			// FrmSampleClient
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -822,6 +831,7 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button btnHeaterApply;
 		private System.Windows.Forms.Button btnHeaterTimer;
+		private System.Windows.Forms.ToolStripMenuItem garage2ToolStripMenuItem;
 	}
 }
 

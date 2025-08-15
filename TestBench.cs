@@ -45,8 +45,8 @@ namespace EpServerEngineSampleClient
 			ds.ReadXml(xmlfile);
 			recv_buff = new byte[200];
 			*/
-			on_label_list.Add("BENCH_24V_1");
-			on_label_list.Add("BENCH_24V_2");
+			on_label_list.Add("CHICK_LIGHT");
+			on_label_list.Add("CHICK_HEATER");
 			on_label_list.Add("BENCH_12V_1");
 			on_label_list.Add("BENCH_12V_2");
 			on_label_list.Add("BENCH_5V_1");
@@ -221,11 +221,11 @@ namespace EpServerEngineSampleClient
 			//AddMsg(svrcmd.GetState(offset).ToString());
 			return svrcmd.Change_PortCmd(offset, 2);
 		}
-		private void btn24v1_Click(object sender, EventArgs e)
+		private void btn24v1_Click(object sender, EventArgs e)		// this is now labeled as 'CHICK_LIGHT'
 		{
 			ToggleButton(0, SendCmd(0));
 		}
-		private void btn24v2_Click(object sender, EventArgs e)
+		private void btn24v2_Click(object sender, EventArgs e)		// this in now labeled as 'CHICK_HEATER'
 		{
 			ToggleButton(1, SendCmd(1));
 		}

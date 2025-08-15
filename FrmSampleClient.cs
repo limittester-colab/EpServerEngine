@@ -37,7 +37,8 @@ namespace EpServerEngineSampleClient
 
         //private PlayerDlg playdlg = null;
         private GarageForm garageform = null;
-        private TestBench testbench = null;
+		private GarageForm2 garageform2 = null;
+		private TestBench testbench = null;
         private Cabin cabin = null;
         private Outdoor outdoor = null;
         private DS1620Mgt ds1620 = null;
@@ -220,7 +221,8 @@ namespace EpServerEngineSampleClient
             //AddMsg("dest: " + svrcmd.GetDestIndex().ToString());
 
             garageform = new GarageForm("c:\\users\\daniel\\dev\\adc_list.xml", m_client, primary_wincl);
-            testbench = new TestBench("c:\\users\\daniel\\dev\\adc_list.xml", m_client, primary_wincl);
+			garageform2 = new GarageForm2("c:\\users\\daniel\\dev\\adc_list.xml", m_client, primary_wincl);
+			testbench = new TestBench("c:\\users\\daniel\\dev\\adc_list.xml", m_client, primary_wincl);
             cabin = new Cabin(m_client, primary_wincl);
             outdoor = new Outdoor(m_client, primary_wincl);
             ds1620 = new DS1620Mgt(m_client);
@@ -1553,6 +1555,21 @@ namespace EpServerEngineSampleClient
 				btnHeaterTimer.Text = "Heater Off";
 			}
 
+		}
+
+		private void garage2ToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+            garageform2.Enable_Dlg(true);
+            //garageform.SetStatus(status);
+            garageform2.StartPosition = FormStartPosition.Manual;
+            garageform2.Location = new Point(100, 10);
+            if (garageform2.ShowDialog(this) == DialogResult.OK)
+            {
+            }
+            else
+            {
+            }
+            garageform2.Enable_Dlg(false);
 		}
 
 		private void tbHeaterTimeOn_TextChanged(object sender, EventArgs e)
