@@ -464,5 +464,19 @@ namespace EpServerEngineSampleClient
 			timer2.Enabled = true;
 			pump_timer_tick = seconds;
 		}
+
+/*
+		private void InitializeComponent()
+		{
+			this.SuspendLayout();
+			// 
+			// GarageForm
+			// 
+			this.ClientSize = new System.Drawing.Size(284, 261);
+			this.Name = "GarageForm";
+			this.Text = "Garage Lights";
+			this.ResumeLayout(false);
+		}
+*/
 	}
 }

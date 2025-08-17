@@ -197,7 +197,8 @@ namespace EpServerEngineSampleClient
                 item3.label = dr.ItemArray[1].ToString();
                 //temp += item2.label;
                 //temp += "  ";
-                item3.socket = Convert.ToInt16(dr.ItemArray[2]);
+//                item3.socket = Convert.ToInt16(dr.ItemArray[2]);
+				item3.socket = -1;
                 //temp += item2.socket.ToString();
                 item3.type = Convert.ToInt16(dr.ItemArray[3]);  // type is: 0 - win client; 1 - TS_CLIENT; 2 - TS_SERVER (only one of these)
                                                                 //AddMsg(item2.label.ToString() + " " + item2.ip_addr.ToString() + " " + item2.socket.ToString());
@@ -359,7 +360,6 @@ namespace EpServerEngineSampleClient
         public void OnReceived(INetworkClient client, Packet receivedPacket)
         {
             // anything that gets sent here gets sent to home server if it's up
-           
             if (garageform.Visible == true)
             {
                 garageform.Process_Msg(receivedPacket.PacketRaw);
@@ -405,9 +405,9 @@ namespace EpServerEngineSampleClient
             type_msg = chars[0];
             System.Buffer.BlockCopy(bytes, 2, chars2, 0, bytes.Length - 2);
             ret = new string(chars2);
-            //AddMsg("test: " + ret);
+//            AddMsg(ret);
             string str = svrcmd.GetName(type_msg);
-            //AddMsg(str);
+//            AddMsg(str);
             bool iparam;
             int temp = 0;
 
@@ -583,7 +583,8 @@ namespace EpServerEngineSampleClient
                     i = 0;
                     j = 0;
                     int sock = -1;
-                    AddMsg(ret);
+//                    AddMsg(ret);
+//					AddMsg(" ");
                     string clmsg = " ";
                     foreach (var word in words)
                     {
@@ -591,11 +592,13 @@ namespace EpServerEngineSampleClient
                         {
                             case 0:     // index into clients_avail list
                                 j = int.Parse(word);
-                                //AddMsg(j.ToString());
+								if(clients_avail[j].socket > 0)
+									break;
+//                                AddMsg(j.ToString());
                                 clmsg = word + "  ";
                                 break;
                             case 1:     // ip address
-                                        //AddMsg(word);
+//								AddMsg(word);
                                 clmsg += word + "  ";
                                 break;
                             case 2:     // port no.
@@ -604,9 +607,8 @@ namespace EpServerEngineSampleClient
                                 sock = clients_avail[j].socket = int.Parse(word);
                                 //AddMsg(clients_avail[j].socket.ToString());
                                 clmsg += word + " " + sock.ToString();
-                                //if(avail)
                                 RedrawClientListBox();
-                                //AddMsg(clmsg);
+//                                AddMsg(clmsg);
                                 break;
                             default:
                                 AddMsg("?");
@@ -621,12 +623,12 @@ namespace EpServerEngineSampleClient
                     break;
 
                 case "SEND_STATUS":
-                    //svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("SEND_MESSAGE"), 5, "ABCDA");
-                    //AddMsg("SEND_STATUS");
+					//svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("SEND_MESSAGE"), 5, "ABCDA");
+//                    AddMsg(ret.ToString());
+					svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("UPDATE_STATUS"), 5, "Windows Client\0");
                     break;
 
                 case "SEND_MESSAGE2":
-                    AddMsg(ret);
                     break;
 
                 default:
@@ -819,7 +821,7 @@ namespace EpServerEngineSampleClient
                 if (m_client.IsConnectionAlive)
                 {
                     svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("SET_CLIENT_NAME"), 5, "Windows Client\0");
-					AddMsg("send msg 1");
+					AddMsg("send msg 1a");
 //					svrcmd.Send_Cmd(2);
 					
                     //AddMsg("send client list");
@@ -827,12 +829,12 @@ namespace EpServerEngineSampleClient
                 }
 
             }
-			if(tick == 7)
+			if(tick == 5)
 			{
                 if (m_client.IsConnectionAlive)
                 {
-//					svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("SEND_CLIENT_LIST"), 5, "send client list\0");
-//					AddMsg("send msg 2");
+					svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("SEND_CLIENT_LIST"), 5, "send client list\0");
+					AddMsg("send msg 2a");
 				}
 			}
             if (tick == 20)
@@ -845,7 +847,7 @@ namespace EpServerEngineSampleClient
                         if ((cl.type == 1 || cl.type == 2) && cl.socket > 0)  // set the time on any server/clients in the active list
                             // type 1 is TS_CLIENT type 2 is TS_SERVER
                         {
-                            //AddMsg(cl.label);
+                            AddMsg(cl.label);
 //                            SetTime(cl.index);
                         }
                     }
@@ -1246,7 +1248,7 @@ namespace EpServerEngineSampleClient
                 //AddMsg(cl.label + " " + cl.lbindex.ToString());
                 if (lbAvailClients.SelectedIndex > -1 && cl.lbindex == lbAvailClients.SelectedIndex)
                 {
-                    //AddMsg("send msg: " + cl.label + " " + cl.index);
+                    AddMsg("send msg 1: " + cl.label + " " + cl.index);
                     if (remove)
                     {
                         cl.lbindex = -1;
@@ -1278,7 +1280,7 @@ namespace EpServerEngineSampleClient
                 //AddMsg(cl.label + " " + cl.lbindex.ToString());
                 if (lbAvailClients.SelectedIndex > -1 && cl.lbindex == lbAvailClients.SelectedIndex)
                 {
-                    //AddMsg("send msg: " + cl.label + " " + cl.index);
+                    AddMsg("send msg 2: " + cl.label + " " + cl.index);
                     if (remove)
                     {
                         cl.lbindex = -1;
@@ -1357,8 +1359,9 @@ namespace EpServerEngineSampleClient
 
 		private void shutdownToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-            SendClientMsg(svrcmd.GetCmdIndexI("SHUTDOWN_IOBOX"), " ", true);
-        }
+			//            SendClientMsg(svrcmd.GetCmdIndexI("SHUTDOWN_IOBOX"), " ", true);
+			SendClientMsg(svrcmd.GetCmdIndexI("DISCONNECT"), " ", true);
+		}
 
 		private void getStatusToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -1504,7 +1507,9 @@ namespace EpServerEngineSampleClient
 
 		private void sendClientListToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-            string str = "";
+//            string str = "";
+			SendClientMsg(svrcmd.GetCmdIndexI("SEND_CLIENT_LIST"), " ", true);
+/*
 			if (m_client.IsConnectionAlive)
 			{
 				//str = String.Format("{0,-2} {1,-2}", 0, 0);
@@ -1522,7 +1527,7 @@ namespace EpServerEngineSampleClient
 
 				}
 			}
-
+*/
 		}
 		private void btnHeaterApply_Click(object sender, EventArgs e)
 		{

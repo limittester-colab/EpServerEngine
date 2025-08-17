@@ -60,6 +60,7 @@
 			this.garageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.testbenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.outdoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.garage2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.utilsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dS1620ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +94,6 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnHeaterApply = new System.Windows.Forms.Button();
 			this.btnHeaterTimer = new System.Windows.Forms.Button();
-			this.garage2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -380,30 +380,37 @@
 			// cabinToolStripMenuItem
 			// 
 			this.cabinToolStripMenuItem.Name = "cabinToolStripMenuItem";
-			this.cabinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.cabinToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.cabinToolStripMenuItem.Text = "Cabin";
 			this.cabinToolStripMenuItem.Click += new System.EventHandler(this.cabinToolStripMenuItem_Click);
 			// 
 			// garageToolStripMenuItem
 			// 
 			this.garageToolStripMenuItem.Name = "garageToolStripMenuItem";
-			this.garageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.garageToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.garageToolStripMenuItem.Text = "Garage";
 			this.garageToolStripMenuItem.Click += new System.EventHandler(this.garageToolStripMenuItem_Click);
 			// 
 			// testbenchToolStripMenuItem
 			// 
 			this.testbenchToolStripMenuItem.Name = "testbenchToolStripMenuItem";
-			this.testbenchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.testbenchToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.testbenchToolStripMenuItem.Text = "Testbench";
 			this.testbenchToolStripMenuItem.Click += new System.EventHandler(this.testbenchToolStripMenuItem_Click);
 			// 
 			// outdoorToolStripMenuItem
 			// 
 			this.outdoorToolStripMenuItem.Name = "outdoorToolStripMenuItem";
-			this.outdoorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.outdoorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.outdoorToolStripMenuItem.Text = "Outdoor";
 			this.outdoorToolStripMenuItem.Click += new System.EventHandler(this.outdoorToolStripMenuItem_Click);
+			// 
+			// garage2ToolStripMenuItem
+			// 
+			this.garage2ToolStripMenuItem.Name = "garage2ToolStripMenuItem";
+			this.garage2ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.garage2ToolStripMenuItem.Text = "Garage 2";
+			this.garage2ToolStripMenuItem.Click += new System.EventHandler(this.garage2ToolStripMenuItem_Click);
 			// 
 			// utilsToolStripMenuItem
 			// 
@@ -471,63 +478,63 @@
 			// showTimeUpToolStripMenuItem
 			// 
 			this.showTimeUpToolStripMenuItem.Name = "showTimeUpToolStripMenuItem";
-			this.showTimeUpToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.showTimeUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.showTimeUpToolStripMenuItem.Text = "Show Time Up";
 			this.showTimeUpToolStripMenuItem.Click += new System.EventHandler(this.showTimeUpToolStripMenuItem_Click);
 			// 
 			// getTimeToolStripMenuItem
 			// 
 			this.getTimeToolStripMenuItem.Name = "getTimeToolStripMenuItem";
-			this.getTimeToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.getTimeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.getTimeToolStripMenuItem.Text = "Get Time";
 			this.getTimeToolStripMenuItem.Click += new System.EventHandler(this.getTimeToolStripMenuItem_Click);
 			// 
 			// setTimeToolStripMenuItem
 			// 
 			this.setTimeToolStripMenuItem.Name = "setTimeToolStripMenuItem";
-			this.setTimeToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.setTimeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.setTimeToolStripMenuItem.Text = "Set Time";
 			this.setTimeToolStripMenuItem.Click += new System.EventHandler(this.setTimeToolStripMenuItem_Click);
 			// 
 			// rebootToolStripMenuItem
 			// 
 			this.rebootToolStripMenuItem.Name = "rebootToolStripMenuItem";
-			this.rebootToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.rebootToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.rebootToolStripMenuItem.Text = "Reboot";
 			this.rebootToolStripMenuItem.Click += new System.EventHandler(this.rebootToolStripMenuItem_Click);
 			// 
 			// exitToShellToolStripMenuItem
 			// 
 			this.exitToShellToolStripMenuItem.Name = "exitToShellToolStripMenuItem";
-			this.exitToShellToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.exitToShellToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.exitToShellToolStripMenuItem.Text = "Exit to Shell";
 			this.exitToShellToolStripMenuItem.Click += new System.EventHandler(this.exitToShellToolStripMenuItem_Click);
 			// 
 			// shutdownToolStripMenuItem
 			// 
 			this.shutdownToolStripMenuItem.Name = "shutdownToolStripMenuItem";
-			this.shutdownToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.shutdownToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.shutdownToolStripMenuItem.Text = "Shutdown";
 			this.shutdownToolStripMenuItem.Click += new System.EventHandler(this.shutdownToolStripMenuItem_Click);
 			// 
 			// getStatusToolStripMenuItem
 			// 
 			this.getStatusToolStripMenuItem.Name = "getStatusToolStripMenuItem";
-			this.getStatusToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.getStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.getStatusToolStripMenuItem.Text = "Get Status";
 			this.getStatusToolStripMenuItem.Click += new System.EventHandler(this.getStatusToolStripMenuItem_Click);
 			// 
 			// sendMessageToolStripMenuItem
 			// 
 			this.sendMessageToolStripMenuItem.Name = "sendMessageToolStripMenuItem";
-			this.sendMessageToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.sendMessageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.sendMessageToolStripMenuItem.Text = "Send Message";
 			this.sendMessageToolStripMenuItem.Click += new System.EventHandler(this.sendMessageToolStripMenuItem_Click);
 			// 
 			// sendClientListToolStripMenuItem
 			// 
 			this.sendClientListToolStripMenuItem.Name = "sendClientListToolStripMenuItem";
-			this.sendClientListToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+			this.sendClientListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.sendClientListToolStripMenuItem.Text = "Update Client Table";
 			this.sendClientListToolStripMenuItem.Click += new System.EventHandler(this.sendClientListToolStripMenuItem_Click);
 			// 
@@ -703,13 +710,6 @@
 			this.btnHeaterTimer.Text = "Heater Off";
 			this.btnHeaterTimer.UseVisualStyleBackColor = true;
 			this.btnHeaterTimer.Click += new System.EventHandler(this.btnHeaterTimer_Click);
-			// 
-			// garage2ToolStripMenuItem
-			// 
-			this.garage2ToolStripMenuItem.Name = "garage2ToolStripMenuItem";
-			this.garage2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.garage2ToolStripMenuItem.Text = "Garage 2";
-			this.garage2ToolStripMenuItem.Click += new System.EventHandler(this.garage2ToolStripMenuItem_Click);
 			// 
 			// FrmSampleClient
 			// 

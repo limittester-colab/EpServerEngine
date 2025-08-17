@@ -38,16 +38,16 @@ namespace EpServerEngineSampleClient
 			BENCH_3V3_2,
 			BENCH_LIGHT1,
 			BENCH_LIGHT2,
-			BATTERY_HEATER,     // last one for 147
-			CABIN_SOUTH,             // start of 154
+			BATTERY_HEATER,		// last one for 147
+			CABIN_SOUTH,				// start of 154
 			CABIN_FILECB,
 			CABIN3,
 			CABIN_KITCHEN,
 			CABIN_DOOR,
 			CABIN_EAST,
 			CABIN7,
-			CABIN8,             // last one for 154
-			COOP1_LIGHT,        // start of 150
+			CABIN8,				// last one for 154
+			COOP1_LIGHT,		// start of 150
 			COOP1_HEATER,
 			COOP2_LIGHT,
 			COOP2_HEATER,
