@@ -260,7 +260,6 @@ namespace EpServerEngineSampleClient
             tbTodaysDate.Text = t2date;
             MinTemp = 32;
         }
-
         private void btnConnect_Click(object sender, EventArgs e)
         {
             if (true)
@@ -630,6 +629,38 @@ namespace EpServerEngineSampleClient
 
                 case "SEND_MESSAGE2":
                     break;
+					
+				case "SEND_IOT_VALUES":	
+					words = ret.Split(' ');
+                    i = 0;
+                    j = 0;
+                    clmsg = " ";
+                    foreach (var word in words)
+                    {
+                        switch (i)
+                        {
+                            case 0:     // index into clients_avail list
+                                j = int.Parse(word);
+                                clmsg = word + "  ";
+                                break;
+                            case 1:     // ip address
+//								AddMsg(word);
+                                clmsg += word + "  ";
+                                break;
+                            case 2:
+                                clmsg += word + " ";
+                                break;
+							case 3:
+								clmsg += word;
+								AddMsg(clmsg);
+								break;
+                            default:
+                                AddMsg("?");
+                                break;
+                        }
+                        i++;
+                    }
+					break;
 
                 default:
                     break;
@@ -742,7 +773,6 @@ namespace EpServerEngineSampleClient
         {
             tbReceived.Clear();
         }
-      
         private void myTimerTick(object sender, EventArgs e)
         {
             now = DateTime.Now;
@@ -829,7 +859,7 @@ namespace EpServerEngineSampleClient
                 }
 
             }
-			if(tick == 5)
+			if(tick == 3)
 			{
                 if (m_client.IsConnectionAlive)
                 {
@@ -1079,7 +1109,6 @@ namespace EpServerEngineSampleClient
             button1_Click(new object(), new EventArgs());
             AddMsg("turning lights off automatically");
         }
-		
 		private void btnGetTemp_Click(object sender, EventArgs e)
 		{
         }
@@ -1094,7 +1123,6 @@ namespace EpServerEngineSampleClient
             {
             }
         }
-
 		private void garageToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             garageform.Enable_Dlg(true);
@@ -1109,7 +1137,6 @@ namespace EpServerEngineSampleClient
             }
             garageform.Enable_Dlg(false);
         }
-
 		private void testbenchToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             testbench.Enable_Dlg(true);
@@ -1123,7 +1150,6 @@ namespace EpServerEngineSampleClient
             }
             testbench.Enable_Dlg(false);
         }
-
         private void outdoorToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             outdoor.StartPosition = FormStartPosition.Manual;
@@ -1135,7 +1161,6 @@ namespace EpServerEngineSampleClient
             {
             }
         }
-
 		private void dS1620ToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             ds1620.StartPosition = FormStartPosition.Manual;
@@ -1151,17 +1176,14 @@ namespace EpServerEngineSampleClient
 		{
             this.WindowState = FormWindowState.Minimized;
         }
-
 		private void clearScreenToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             tbReceived.Clear();
         }
-
 		private void clearAlertToolStripMenuItem_Click(object sender, EventArgs e)
 		{
           
         }
-
         private void assignFunctionKeyToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             int func = 0;
@@ -1224,7 +1246,6 @@ namespace EpServerEngineSampleClient
             }
             easyButton.Dispose();
         }
-
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             if (client_connected)
@@ -1305,7 +1326,6 @@ namespace EpServerEngineSampleClient
                 }
             }
         }
-
         private void exitToShellToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             SendClientMsg(svrcmd.GetCmdIndexI("EXIT_TO_SHELL"), " ", true);
@@ -1314,7 +1334,6 @@ namespace EpServerEngineSampleClient
             AlertLabel.Visible = false;
             //client_alert = false;
         }
-
 		private void showTimeUpToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             foreach (ClientsAvail cl in clients_avail)
@@ -1328,7 +1347,6 @@ namespace EpServerEngineSampleClient
                 }
             }
         }
-
         private void getTimeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             foreach (ClientsAvail cl in clients_avail)
@@ -1339,35 +1357,30 @@ namespace EpServerEngineSampleClient
                 }
             }
         }
-
         private void setTimeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             foreach (ClientsAvail cl in clients_avail)
             {
                 if (lbAvailClients.SelectedIndex > -1 && cl.lbindex == lbAvailClients.SelectedIndex)
                 {
-                    //AddMsg(cl.label);
+                    AddMsg(cl.label);
                     SetTime(cl.index);
                 }
             }
         }
-
         private void rebootToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             SendClientMsg(svrcmd.GetCmdIndexI("REBOOT_IOBOX"), " ", true);
         }
-
 		private void shutdownToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			//            SendClientMsg(svrcmd.GetCmdIndexI("SHUTDOWN_IOBOX"), " ", true);
 			SendClientMsg(svrcmd.GetCmdIndexI("DISCONNECT"), " ", true);
 		}
-
 		private void getStatusToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             SendClientMsg(svrcmd.GetCmdIndexI("SEND_STATUS"), "status", false);
         }
-
 		private void btnExit_Click(object sender, EventArgs e)
 		{
             DialogResult ret = MessageBox.Show("Do you want to exit?",
@@ -1376,7 +1389,6 @@ namespace EpServerEngineSampleClient
             if (ret == DialogResult.Yes)
                 exitToolStripMenuItem_Click(new object(), new EventArgs());
         }
-
 		private void loadTempFileToolStripMenuItem_Click(object sender, EventArgs e)
 		{
                    }
@@ -1438,40 +1450,33 @@ namespace EpServerEngineSampleClient
 		{
             garageform.RunWaterPump(10);
 		}
-
 		private void btnWaterTimeMedium_Click(object sender, EventArgs e)
 		{
 			garageform.RunWaterPump(30);
 		}
-
 		private void btnWaterTimeLong_Click(object sender, EventArgs e)
 		{
 			garageform.RunWaterPump(52);
 		}
-
 		private void sendMessageToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			SendClientMsg(svrcmd.GetCmdIndexI("SEND_MESSAGE2"), SendMessageBox.Text, false);
 		}
-
 		private void minTempChanged(object sender, EventArgs e)
 		{
 			MinTemp = Convert.ToInt32(tbMinTemp.Text);
             AddMsg(MinTemp.ToString());
 		}
-
 		private void btnTest_Click(object sender, EventArgs e)
 		{
             svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("WATER_HEATER"), 5, "ON");
             AddMsg("pump on");
 		}
-
 		private void btnPumpOff_Click(object sender, EventArgs e)
 		{
 			svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("WATER_HEATER"), 5, "OFF");
 			AddMsg("pump off");
 		}
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -1504,7 +1509,6 @@ namespace EpServerEngineSampleClient
                 timer3.Enabled = true;
 			}
 		}
-
 		private void sendClientListToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 //            string str = "";
@@ -1536,7 +1540,6 @@ namespace EpServerEngineSampleClient
             heaterStatus = true;
             //AddMsg("heater on");
 		}
-
 		private void btnHeaterTimer_Click(object sender, EventArgs e)
 		{
             if(!heaterTimerOn)
@@ -1561,7 +1564,6 @@ namespace EpServerEngineSampleClient
 			}
 
 		}
-
 		private void garage2ToolStripMenuItem_Click(object sender, EventArgs e)
 		{
             garageform2.Enable_Dlg(true);
@@ -1576,13 +1578,11 @@ namespace EpServerEngineSampleClient
             }
             garageform2.Enable_Dlg(false);
 		}
-
 		private void tbHeaterTimeOn_TextChanged(object sender, EventArgs e)
 		{
 			heaterTimeOn = Convert.ToInt16(tbHeaterTimeOn.Text);
 			//AddMsg(heaterTimeOn.ToString());
 		}
-
 		private void tbHeaterTimeOff_TextChanged(object sender, EventArgs e)
 		{
 			heaterTimeOff = Convert.ToInt16(tbHeaterTimeOff.Text);
