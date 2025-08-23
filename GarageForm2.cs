@@ -161,7 +161,6 @@ namespace EpServerEngineSampleClient
 			ToggleButton(3);
 			AddMsg("valve 3");
 		}
-
 		private void btnWaterPump_Click(object sender, EventArgs e)
 		{
 			ToggleButton(4);
@@ -169,7 +168,6 @@ namespace EpServerEngineSampleClient
 			timer1.Enabled = true;
 			pump_timer_tick = 10;
 		}
-
 		private void timer_int(object sender, EventArgs e)
 		{
 			AddMsg(pump_timer_tick.ToString());
@@ -178,6 +176,13 @@ namespace EpServerEngineSampleClient
 				ToggleButton(4, SendCmd(4,"OFF"));
 				timer1.Enabled = false;
 			}
+		}
+		public void RunWaterPump(int seconds)
+		{
+			ToggleButton(4);
+			AddMsg("pump on");
+			timer1.Enabled = true;
+			pump_timer_tick = seconds;
 		}
 	}
 }

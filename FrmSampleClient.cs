@@ -1448,15 +1448,15 @@ namespace EpServerEngineSampleClient
         }
 		private void btnWaterTimeShort_Click(object sender, EventArgs e)
 		{
-            garageform.RunWaterPump(10);
+            garageform2.RunWaterPump(10);
 		}
 		private void btnWaterTimeMedium_Click(object sender, EventArgs e)
 		{
-			garageform.RunWaterPump(30);
+			garageform2.RunWaterPump(30);
 		}
 		private void btnWaterTimeLong_Click(object sender, EventArgs e)
 		{
-			garageform.RunWaterPump(52);
+			garageform2.RunWaterPump(52);
 		}
 		private void sendMessageToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -1469,12 +1469,12 @@ namespace EpServerEngineSampleClient
 		}
 		private void btnTest_Click(object sender, EventArgs e)
 		{
-            svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("WATER_HEATER"), 5, "ON");
+            //svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("WATER_PUMP"), 3, "ON");
             AddMsg("pump on");
 		}
 		private void btnPumpOff_Click(object sender, EventArgs e)
 		{
-			svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("WATER_HEATER"), 5, "OFF");
+			//svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("WATER_PUMP"), 3, "OFF");
 			AddMsg("pump off");
 		}
         private void button1_Click(object sender, EventArgs e)
@@ -1483,13 +1483,11 @@ namespace EpServerEngineSampleClient
             if (light_list)
             {
                 light_list = false;
-				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("NORTHWEST_LIGHT"), 5, "OFF");
-				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("MIDDLE_LIGHT"), 5, "OFF");
+				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("NORTHWEST_LIGHT"), 3, "OFF");
+				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("MIDDLE_LIGHT"), 3, "OFF");
 				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("BENCH_LIGHT1"), 2, "OFF");
-				/*
 				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("CABIN_SOUTH"), 1, "OFF");
 				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("CABIN_KITCHEN"), 1, "OFF");
-                */
 				btn_light_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
                 btn_light_list.Text = "OFF";
                 timer3.Enabled = false;
@@ -1497,13 +1495,11 @@ namespace EpServerEngineSampleClient
 			else
             {
                 light_list = true;
-				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("NORTHWEST_LIGHT"), 5, "ON");
-				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("MIDDLE_LIGHT"), 5, "ON");
+				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("NORTHWEST_LIGHT"), 3, "ON");
+				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("MIDDLE_LIGHT"), 3, "ON");
 				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("BENCH_LIGHT1"), 2, "ON");
-				/*
 				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("CABIN_SOUTH"), 1, "ON");
 				svrcmd.Send_ClCmd(svrcmd.GetCmdIndexI("CABIN_KITCHEN"), 1, "ON");
-                */
 				btn_light_list.BackColor = Color.Aqua;
 				btn_light_list.Text = "ON";
                 timer3.Enabled = true;

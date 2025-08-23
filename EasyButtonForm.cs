@@ -49,11 +49,6 @@ namespace EpServerEngineSampleClient
 			garage_list.Add("WEST_LIGHT");
 			garage_list.Add("NORTHEAST_LIGHT");
 			garage_list.Add("SOUTHWEST_LIGHT");
-			garage_list.Add("WATER_HEATER");
-			garage_list.Add("WATER_PUMP");
-			garage_list.Add("WATER_VALVE1");
-			garage_list.Add("WATER_VALVE2");
-			garage_list.Add("WATER_VALVE3");
 
 			testbench_list.Add("CHICK_LIGHT");
 			testbench_list.Add("CHICK_HEATER");
@@ -128,6 +123,7 @@ namespace EpServerEngineSampleClient
 		}
 		private void add_outdoor_list()
 		{
+			lbPort.Items.Clear();
 			lbPort.Items.Add("COOP1_LIGHT");
 			lbPort.Items.Add("COOP1_HEATER");
 			lbPort.Items.Add("COOP2_LIGHT");
@@ -169,7 +165,7 @@ namespace EpServerEngineSampleClient
 			{
 				case 0:
 					add_garage_list();
-					type = 5;   // garage 
+					type = 3;   // garage 
 					break;
 
 				case 1:
@@ -197,7 +193,7 @@ namespace EpServerEngineSampleClient
 			//AddMsg(port.ToString());
 			switch(type)
 			{
-				case 5:
+				case 3:
 					AddMsg(garage_list[port]);
 					port = svrcmd.GetCmdIndexI(garage_list[port]);
 					break;
@@ -209,8 +205,9 @@ namespace EpServerEngineSampleClient
 					AddMsg(testbench_list[port]);
 					port = svrcmd.GetCmdIndexI(testbench_list[port]);
 					break;
-				case 3:
 				case 4:
+					AddMsg(outdoor_list[port]);
+					port = svrcmd.GetCmdIndexI(outdoor_list[port]);
 					break;
 					//port = svrcmd.GetCmdIndexI(outdoor_list[port]);
 					//break;
